@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+
+\title{Hello LaTeX with 中文}
+\author{Setsuna}
+\begin{document}
+\maketitle
+\section{图像卷积与信号卷积对照理解}
+本文主要解释如何理解图像卷积与信号卷积之间的关系
+
+  \subsection{Hello 卷积}
+  图像在进行{卷积}操作时，通常都是由滤波器“滑过”图像
+
+  \subsubsection{回顾}
+  典型的滤波器在每一次滑动时，滤波器都对它本身覆盖的图像区域的像素值进行加权求和。
+
+  \subsubsection{理解}
+  回顾信号中离散卷积和公式
+
+  $$y\left[ n \right] = \sum\limits_{k =  - \infty }^{ + \infty } {x\left[ k \right]h\left[ {n - k} \right]}$$
+
+  该公式与实际的图像卷积过程等效（暂且将图像想象成一维的数据），具体体现在以下几点：
+
+  ${x\left[ k \right]}$当于原始图像，${h\left[ {n - k} \right]}$相当于滑动中的滤波器，$y\left[ n \right]$相当于输出图像。
+
+  \subsection{Hello 卷积2}
+
+\end{document}
