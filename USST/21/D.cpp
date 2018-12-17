@@ -14,15 +14,13 @@ int main()
   	  	scanf("%lld",&x);
   	  	a[i]=a[i-1]+x;
   	}
-  	a[0]=0x3f3f3f3f;
   	int head=0,end=1;
-  	q[0]=0x3f3f3f3f;
+  	q[0]=0;
   	for(int i=1;i<=n;i++)
   	{
-  		printf("%d\n",i);
   		ans=max(ans,a[i]-a[q[head]]);
-    	while(head<end&&a[q[end-1]]<a[i]) end--;
-    	while(head<end&&q[head]<i-t) head++;
+    	while(head<end&&a[q[end-1]]>a[i]) end--;
+    	if(head<end&&q[head]<=i-t) head++;
     	q[end++]=i;
   	} 
   	printf("%lld",ans);
