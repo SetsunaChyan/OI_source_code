@@ -1,0 +1,27 @@
+{
+    "configurations": [
+           {
+    "name": "Win32",
+    "browse": {
+    "path": [
+    "${workspaceFolder}"
+                   ],
+    "limitSymbolsToIncludedHeaders": true
+               },
+    "includePath": [
+    "${workspaceFolder}/**"
+               ],
+    "defines": [
+    "_DEBUG",
+    "UNICODE",
+    "_UNICODE"
+               ],
+    "comment":"只改了编译器路径",
+    "compilerPath": "D:/CodeBlocks/MinGW/bin/gdb.exe",
+    "cStandard": "c11",
+    "cppStandard": "c++17",
+    "intelliSenseMode": "clang-x64"
+           }
+       ],
+    "version": 4
+   }
