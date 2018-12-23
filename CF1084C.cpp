@@ -18,7 +18,7 @@ int main()
     {
         if(s[i]=='a')
             ans=(ans+b+1)%mod;
-        else if(i&&s[i-1]=='a'&&s[i]=='b')
+        else
             b=ans;
     }
     printf("%lld",ans);
