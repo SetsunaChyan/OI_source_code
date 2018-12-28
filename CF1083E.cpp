@@ -29,7 +29,7 @@ int main()
     for(int i=1;i<=n;i++)
     {
         while(head<ed-1&&rate(q[head],q[head+1])>p[i].y) head++;
-        dp[i]=dp[q[head]]-p[i].a+p[i].y*(p[i].x-p[q[head]].x);
+        dp[i]=dp[q[head]]-p[i].a+p[i].y*(p[i].x-p[q[head]].x); 
         ans=max(ans,dp[i]);
         while(head<ed-1&&rate(q[ed-2],q[ed-1])<rate(q[ed-1],i)) ed--;
         q[ed++]=i;
