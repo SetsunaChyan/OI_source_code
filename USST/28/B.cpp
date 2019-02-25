@@ -26,7 +26,7 @@ int main()
     scanf("%d%d",&m,&n);
     for(int i=0;i<n;i++)
         scanf("%d%d",&a[i].dli,&a[i].num);
-    sort(a,a+n,cmp);
+    //sort(a,a+n,cmp);
     for(int i=0;i<n;i++)
     {
         int k=1,g=a[i].num;
