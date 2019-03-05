@@ -5,7 +5,8 @@
         "algorithm": "cpp",
         "cmath": "cpp",
         "queue": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "cstdio": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
