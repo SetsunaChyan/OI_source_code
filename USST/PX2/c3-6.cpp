@@ -4,6 +4,8 @@ int _,n,a[1005],ans;
 
 int main()
 {
+    freopen("data2.out","w",stdout);
+    freopen("data.in","r",stdin);
     scanf("%d",&_);
     while(_--)
     {
