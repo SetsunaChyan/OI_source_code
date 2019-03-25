@@ -8,7 +8,8 @@
         "xstring": "cpp",
         "cstdio": "cpp",
         "utility": "cpp",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "ostream": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

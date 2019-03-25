@@ -1,8 +1,9 @@
 #include <cstdio>
 
 typedef long long ll;
+
 const ll mod=998244353;
-ll n,m,l,ans=1;
+ll n,x;
 
 ll fp(ll a,ll b)
 {
@@ -18,10 +19,12 @@ ll fp(ll a,ll b)
 
 int main()
 {
-    scanf("%lld%lld%lld",&n,&m,&l);
-    for(ll i=n;i>n-m;i--) ans=ans*i%mod;
-    for(ll i=2;i<=m;i++) ans=ans*fp(i,mod-2)%mod;
-    ans=ans*fp(n-m,l)%mod;
-    printf("%lld",ans);
+    scanf("%lld%lld",&n,&x);
+    if(x==1)
+    {
+        printf("%lld",(1+n)*n%mod*fp(2,mod-2)%mod);
+        return 0;
+    }
+    printf("%lld",((n*n%mod-2*n%mod+3)*fp(2,n+1)+mod-6)%mod);
     return 0;
 }
