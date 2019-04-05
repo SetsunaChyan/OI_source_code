@@ -2,6 +2,7 @@
 #include <cstring>
 
 /*
+扩展KMP
 ex[i]: s1[i..l1-1]与s2的最大公共前缀长度
 exnext[i]: s2[i..l2-1]与s2的最大公共前缀长度
 get_exnext(s2) 求exnext[]
@@ -50,10 +51,4 @@ void exkmp(char s1[N],char s2[N])
             p=i;
         }
     }
-}
-
-int main()
-{
-
-    return 0;
 }

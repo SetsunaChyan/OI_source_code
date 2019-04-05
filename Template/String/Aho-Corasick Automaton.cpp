@@ -4,10 +4,13 @@
 #include <cstring>
 #include <queue>
 
+/*
+AC自动机
+多模式串匹配
+*/
+
 using namespace std;
 
-int n;
-char stmp[10005],s[1000005];
 struct node
 {
     node *nxt[26],*fail;
@@ -19,7 +22,6 @@ struct node
         cnt=0;
     }
 }*trie;
-queue<node *> q;
 
 void trie_del(node *p)
 {
@@ -45,6 +47,7 @@ void trie_insert(node *head,char s[],int len,int delta)
 
 void acatm_build(node *head)
 {
+    queue<node *> q;
     head->fail=NULL;
     q.push(head);
     while(!q.empty())
@@ -88,26 +91,3 @@ int acatm_match(node *head,char s[],int len)
     return ret;
 }
 
-void solve()
-{
-    trie_del(trie);
-    trie=new node();
-    scanf("%d",&n);
-    for(int i=0;i<n;i++)
-    {
-        scanf("%s",stmp);
-        trie_insert(trie,stmp,strlen(stmp),1);
-    }
-    acatm_build(trie);
-    scanf("%s",s);
-    printf("%d\n",acatm_match(trie,s,strlen(s)));
-}
-
-int main()
-{
-    int _;
-    scanf("%d",&_);
-    while(_--)
-        solve();
-    return 0;
-}
