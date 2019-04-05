@@ -1,43 +1,88 @@
 #include <cstdio>
-#include <algorithm>
 #include <memory.h>
+#include <cstring>
 
-using namespace std;
+typedef long long ll;
+ll n,m,t,act,e[60][70][70],z[70][70],op[9][9];
+char s[10][10];
 
-struct node
+inline ll max(ll a,ll b){return a>b?a:b;}
+
+void multi(ll x[70][70],ll y[70][70],ll n)
 {
-    int v,pos;
-}e[200005];
-const int mod=998244353;
-int n,a[200005];
-long long ans=1;
+    ll tmp[70][70];
+    memset(tmp,0,sizeof(tmp));
+    for(int i=0;i<n;i++)
+        for(int j=0;j<n;j++)
+            for(int k=0;k<n;k++)
+                tmp[i][j]+=x[i][k]*y[k][j];
+    for(int i=0;i<n;i++)
+        for(int j=0;j<n;j++)
+            x[i][j]=tmp[i][j];
+}
 
-inline bool cmp(node a,node b){return a.v<b.v||a.v==b.v&&a.pos<b.pos;}
+void fp(ll x[70][70],ll y,ll n)
+{
+    ll ret[70][70];
+    memset(ret,0,sizeof(ret));
+    for(int i=0;i<n;i++)
+        ret[i][i]=1;
+    while(y)
+    {
+        if(y&1) multi(ret,x,n);
+        multi(x,x,n);
+        y>>=1;
+    }
+    for(int i=0;i<n;i++)
+        for(int j=0;j<n;j++)
+            x[i][j]=ret[i][j];
+}
 
 int main()
 {
-    memset(a,0,sizeof(a));
-    scanf("%d",&n);
+    memset(e,0,sizeof(e));
+    scanf("%lld%lld%lld%lld",&n,&m,&t,&act);
+    ll ln=n*m+1;
     for(int i=0;i<n;i++)
+        for(int j=0;j<m;j++)
+            scanf("%1d",&op[i][j]);
+    for(int i=0;i<act;i++)
+        scanf("%s",s[i]);
+    for(int tm=0;tm<60;tm++)
     {
-        scanf("%d",&e[i].v);
-        e[i].pos=i;
+        e[tm][ln-1][ln-1]=1;
+        for(int i=0;i<n;i++)
+            for(int j=0;j<m;j++)
+            {
+                int now=i*m+j;
+                char c=s[op[i][j]][tm%strlen(s[op[i][j]])];
+                if(c>='0'&&c<='9')
+                {
+                    e[tm][now][now]=1;
+                    e[tm][now][ln-1]=c-'0';
+                }
+                if(c=='N'&&i)
+                    e[tm][(i-1)*m+j][now]=1;
+                if(c=='W'&&j)
+                    e[tm][i*m+(j-1)][now]=1;
+                if(c=='S'&&i!=n-1)
+                    e[tm][(i+1)*m+j][now]=1;
+                if(c=='E'&&j!=m-1)
+                    e[tm][i*m+(j+1)][now]=1;
+            }
     }
-    sort(e,e+n,cmp);
-    a[e[0].pos]++;
-    for(int i=1;i<n;i++)
-        if(e[i].v!=e[i-1].v)
-        {
-            a[e[i].pos]++;
-            a[e[i-1].pos+1]--;
-        }
-    a[e[n-1].pos+1]--;
-    int k=0;
-    for(int i=0;i<=n;i++)
-    {
-        k+=a[i];
-        if(k==0) ans=ans*2%mod;
-    }
+    for(int i=0;i<ln;i++)
+        for(int j=0;j<ln;j++)
+            z[i][j]=e[59][i][j];
+    for(int i=58;i>=0;i--)
+        multi(z,e[i],ln);
+    fp(z,t/60,ln);
+    t%=60;
+    for(int i=t-1;i>=0;i--)
+        multi(z,e[i],ln);
+    ll ans=0;
+    for(int i=0;i<ln-1;i++)
+        ans=max(ans,z[i][ln-1]);
     printf("%lld",ans);
     return 0;
 }

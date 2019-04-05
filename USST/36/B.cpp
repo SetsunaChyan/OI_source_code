@@ -5,7 +5,7 @@
 
 using namespace std;
 
-string s[10005];
+string s[100005];
 int n;
 
 inline bool cmp(string a,string b){return a+b>b+a;}
