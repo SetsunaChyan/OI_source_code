@@ -7,6 +7,7 @@
 /*
 AC自动机
 多模式串匹配
+这边的trie是动态开点
 */
 
 using namespace std;
