@@ -59,6 +59,8 @@ void acatm_build(node *head)
                 p->nxt[i]->fail=tp?tp->nxt[i]:head;
                 q.push(p->nxt[i]);
             }
+            //else
+            //    p->nxt[i]=(p!=head)?(p->fail)->nxt[i]:head;
     }
 }
 
@@ -73,15 +75,12 @@ int acatm_match(node *head,char s[],int len)
         if(p->nxt[c]) 
         {
             p=p->nxt[c];
-            if(p->cnt)
+            node *tp=p;
+            while(tp->fail)
             {
-                node *tp=p;
-                while(tp->fail)
-                {
-                    ret+=tp->cnt;
-                    tp->cnt=0;
-                    tp=tp->fail;
-                }
+                ret+=tp->cnt;
+                tp->cnt=0;
+                tp=tp->fail;
             }
         }
     }

@@ -1,17 +1,10 @@
 #include <cstdio>
 #include <memory.h>
+#include <queue>
 #include <malloc.h>
 #include <cstring>
-#include <queue>
 
 using namespace std;
-
-/*
-AC自动机
-多模式串匹配
-trie静态开点+trie图优化
-*/
-
 int sz,hd=1,nxt[1000005][26],fail[1000005],id[1000005],n;
 char s[1000005];
 
@@ -70,4 +63,19 @@ int acatm_match(int head,char s[],int len)
         }
     }
     return ret;
+}
+
+int main()
+{
+    scanf("%d",&n);
+    trie_clean();
+    for(int i=0;i<n;i++)
+    { 
+        scanf("%s",s);
+        trie_insert(hd,s,strlen(s),1);
+    }
+    acatm_build(hd);
+    scanf("%s",s);
+    printf("%d",acatm_match(hd,s,strlen(s)));
+    return 0;
 }
