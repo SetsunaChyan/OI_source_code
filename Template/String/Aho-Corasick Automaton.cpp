@@ -63,11 +63,8 @@ int acatm_match(int head,char s[],int len)
     {
         int c=(int)s[i]-'a';
         p=nxt[p][c];
-        for(int tp=p;tp&&id[tp]!=-1;tp=fail[tp])
-        {
-            if(id[tp]) ret+=id[tp];
-            id[tp]=-1;
-        }
+        for(int tp=p;tp;tp=fail[tp])
+            if(id[tp]) ret++;
     }
     return ret;
 }

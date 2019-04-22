@@ -2,16 +2,17 @@
 #include <cstring>
 #include <memory.h>
 #include <queue>
+#include <string>
 
 using namespace std;
 
-int fail[2005],nxt[2005][26],cnt[2005],sz,hd,n,m,dp[55][2005],from[55][2005],ch[2005],vis[55][2005],sel[55][2005];
+int fail[2005],nxt[2005][26],cnt[2005],sz,hd,n,m,dp[55][2005],from[55][2005];
 char s[105][15];
+string dps[55][2005];
 
-inline void clear()
+void clear()
 {
     sz=hd=1;
-    memset(vis,0,sizeof(vis));
     memset(dp,0xc0,sizeof(dp));
     memset(fail,0,sizeof(fail));
     memset(nxt,0,sizeof(nxt));
@@ -26,7 +27,6 @@ void trie_insert(int head,char s[],int len,int idx)
         int c=s[i]-'a';
         if(!nxt[p][c]) nxt[p][c]=++sz;
         p=nxt[p][c];
-        ch[p]=c;
     }
     cnt[p]+=idx;
 }
@@ -51,10 +51,10 @@ void acatm_build(int head)
     }
 }
 
-void print(int x,int y)
+bool scmp(string a,string b)
 {
-    if(x>1) print(x-1,from[x][y]);
-    if(x) printf("%c",sel[x][y]+'a');
+    if(a.length()==b.length()) return a<b;
+    else return a.length()<b.length();
 }
 
 void solve()
@@ -71,46 +71,31 @@ void solve()
     }
     acatm_build(hd);
 
-    int ans=0,idi=0,idj=1;
+    for(int i=0;i<=n;i++)
+        for(int j=0;j<=sz;j++)
+            dps[i][j]=string("");
+    int ans=0;
+    string anss;
     queue<pair<int,int> > q;
-    dp[0][1]=0,vis[0][1]=1;
-    q.push(make_pair(0,1));
-    while(!q.empty())
-    {
-        int i=q.front().first,j=q.front().second;
-        q.pop();
-        if(dp[i][j]<0) continue;
-        for(int k=0;k<26;k++)
-            if(nxt[j][k]!=hd&&dp[i][j]+cnt[nxt[j][k]]>dp[i+1][nxt[j][k]])
+    dp[0][1]=0;
+    for(int i=0;i<n;i++)
+        for(int j=1;j<=sz;j++)
+            for(int k=0;k<26;k++)
+                if(dp[i][j]+cnt[nxt[j][k]]>dp[i+1][nxt[j][k]]
+                ||dp[i][j]+cnt[nxt[j][k]]==dp[i+1][nxt[j][k]]&&scmp(dps[i][j]+char('a'+k),dps[i+1][nxt[j][k]]))
+                {
+                    dps[i+1][nxt[j][k]]=dps[i][j]+char('a'+k);
+                    dp[i+1][nxt[j][k]]=dp[i][j]+cnt[nxt[j][k]];
+                }
+    for(int i=0;i<=n;i++)
+        for(int j=1;j<=sz;j++) 
+            if(dp[i][j]>ans||dp[i][j]==ans&&scmp(dps[i][j],anss))
             {
-                dp[i+1][nxt[j][k]]=dp[i][j]+cnt[nxt[j][k]];
-                from[i+1][nxt[j][k]]=j;
-                sel[i+1][nxt[j][k]]=k;
-                if(ans<dp[i+1][nxt[j][k]])
-                {
-                    ans=dp[i+1][nxt[j][k]];
-                    idi=i+1;
-                    idj=nxt[j][k];
-                }
-                if(i+1==n)
-                {
-                    print(i+1,nxt[j][k]);
-                    puts("");
-                }
-                if(!vis[i+1][nxt[j][k]]&&i+1<n) 
-                {
-                    q.push(make_pair(i+1,nxt[j][k]));
-
-                        print(i,j);
-                        printf(" ");
-                        print(i+1,nxt[j][k]);
-                        puts("");
-
-                    vis[i+1][nxt[j][k]]=1;
-                }
+                ans=dp[i][j];
+                anss=dps[i][j];
             }
-    }
-    print(idi,idj);
+    for(int i=0;i<anss.length();i++)
+        printf("%c",anss[i]);
     printf("\n");
 }
 
@@ -121,19 +106,3 @@ int main()
     while(_--) solve();
     return 0;
 }
-
-/*
-4
-4 10
-ab
-ac
-ad
-ae
-af
-ba
-bb
-bc
-bd
-be
-1 1 1 1 1 1 1 1 1 1
-*/
