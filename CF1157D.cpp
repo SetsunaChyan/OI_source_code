@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 typedef long long ll;
+ll n;
+int k,a[]
 
-const ll mod=1e9+7;
-
-pair<ll,bool> dp[]
 int main()
 {
 
