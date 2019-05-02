@@ -1,2 +1,7 @@
+#include <cstdio>
 
-        ll x=b/i*i+(b%i!=0)*i-b,t=(a-b)/i;
+int main()
+{
+    printf("%d",1<<-1);
+    return 0;
+}
