@@ -1,0 +1,4 @@
+\renewcommand{\contestname}{
+USSTSIW ACM集训队召唤神龙武道大会\\
+April 26, 2019
+}

@@ -1,0 +1,4 @@
+﻿\renewcommand{\contestname}{
+2019年USSTSIW团队热身赛第四场\\
+May 10, 2019
+}

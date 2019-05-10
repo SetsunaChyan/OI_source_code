@@ -1,0 +1,32 @@
+\begin{problem}{数的操作}{数的操作.in}{数的操作.out}{1 second}
+
+给定两个正整数$x$和$y$，现在可以对$x$和$y$进行以下操作，使得经过操作以后得到一个指定数$t$，操作过程如下：
+
+（1）可以对$x$和$y$进行$x=x-i*dx$和$y=y-j*dy$的变换操作$(0 \leq i,j<n)$，使得$x$和$y$变成一个新的数;
+
+（2）可以对$x$和$y$进行加法运算，也可以单独对$x$或者$y$进行运算。
+
+问，能否通过以上操作得到$t$，如能输出“YES”，否则输出“NO”。\textbf{注意，以上两种操作每种操作最多只能执行一次；如不执行任何操作其结果为$0$。}
+
+\InputFile
+
+输入 $t,n,x,y,dx,dy$
+
+$0 \leq t \leq 300$
+
+$1 \leq n,x,y,dx,dy \leq 300$
+
+\OutputFile
+
+按题目要求输出结果。
+
+\Examples
+
+\begin{example}
+\exmp{
+30 5 20 20 3 5
+}{
+YES
+}%
+\end{example}
+\end{problem}

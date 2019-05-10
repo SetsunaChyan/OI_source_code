@@ -1,0 +1,33 @@
+\documentclass[11pt,a4paper,oneside,UTF8]{ctexart}
+
+%\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{olymp}
+\usepackage{amsmath,graphicx}
+\usepackage{csquotes}
+\usepackage{bnf}
+\usepackage{listings}
+
+\newcommand{\chr}[1]{\mbox{`\texttt{#1}'}}
+\newcommand{\txt}[1]{\mbox{``\texttt{#1}''}}
+\newcommand{\TODO}[1]{\par{\Huge{}TODO: #1}}
+
+\input contest.texi
+\newcommand{\timeLimit}{3 seconds}
+\renewcommand{\defaultmemorylimit}{256 megabytes}
+\renewcommand{\figurename}{}
+
+
+\binoppenalty=10000
+\relpenalty=10000
+\hyphenpenalty=10000
+
+\begin{document}
+\input problems/A.tex
+\input problems/B.tex
+\input problems/C.tex
+\input problems/D.tex
+\input problems/E.tex
+\input problems/F.tex
+\input problems/G.tex
+\end{document}
