@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "typeinfo": "cpp",
         "iostream": "cpp",
         "cstring": "cpp",
         "algorithm": "cpp",
@@ -9,7 +10,8 @@
         "cstdio": "cpp",
         "utility": "cpp",
         "chrono": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "random": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     "C_Cpp.intelliSenseEngineFallback": "Enabled"
