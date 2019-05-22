@@ -11,7 +11,8 @@
         "utility": "cpp",
         "chrono": "cpp",
         "ostream": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "valarray": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     "C_Cpp.intelliSenseEngineFallback": "Enabled"
