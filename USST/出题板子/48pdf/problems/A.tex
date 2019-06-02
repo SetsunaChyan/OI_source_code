@@ -1,0 +1,41 @@
+\begin{problem}{Haruhi's Examination}{standard input}{standard output}{1 second}
+
+众所周知，在 $SH$ 市，数学高考成绩满分为 $150$ ，分数构成为填空题 $4' \times 6 + 5' \times 6$ ，选择题 $5' \times 4$ 以及解答题 $14' \times 3 + 16' + 18'$。
+
+为了方便起见，题目只有得全分和不得分。
+
+现在 $Haruhi$ 想要考到理想的分数 $x$。她的策略是这样的，先把题全做对，然后挑选一些倒霉的题把它们改成错误的答案，使分数恰好变成 $x$。
+
+由于 $Haruhi$ 觉得改错答案太麻烦了，现在她想要知道最少需要改几道题目能使分数变成 $x$。
+
+如果无论怎么改都无法使分数变为 $x$ ，那就输出 "$-1$" 。
+
+\InputFile
+
+多组数据。
+
+一行一个整数 $T (1 \leq T \leq 200)$ ，表示接下来有 $T$ 组数据。
+
+接下来 $T$ 行，每行一个正整数 $x(0 \leq x \lt 200)$ ，表示 $Haruhi$ 的期望分数。
+
+\OutputFile
+
+对于每组输入，输出一行一个整数。
+
+\Examples
+
+\begin{example}
+\exmp{
+4
+150
+146
+132
+149
+}{
+0
+1
+1 
+-1
+}%
+\end{example}
+\end{problem}

@@ -1,0 +1,4 @@
+﻿\renewcommand{\contestname}{
+USSTSIW-ACM集训队练习赛第48场\\
+May 27, 2019
+}
