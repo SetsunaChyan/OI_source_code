@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int N=100005;
+const int N=200005;
 int fa[N],head[N],tot=0,vis[N],n,m,k,opt[N],ans[N],white=0;
 
 struct edge

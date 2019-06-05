@@ -1,0 +1,36 @@
+\begin{problem}{Haruhi with Bubbles}{standard input}{standard output}{1 second}
+
+$Haruhi$ 在社团教室里养了两条鱼，一条叫红鲤鱼，一条叫绿鲤鱼。
+
+$Haruhi$ 发现红鲤鱼和绿鲤鱼喜欢吐泡泡。
+
+吐出的泡泡可以看成一串仅含有 $O$ 和 $o$ 的字符串。
+
+每过一秒，两个连续的 $o$ 会变成一个 $O$ ，两个连续的 $O$ 会爆掉。
+
+$Haruhi$ 没有那么多时间看鱼吐泡泡，现在有一串初始的泡泡序列，她想知道最终的泡泡序列。
+
+\InputFile
+
+输入只有一行，是一个仅含有 $O$ 和 $o$ 的字符串 $s(1 \leq |s| \leq 1000)$。
+
+\OutputFile
+
+输出一行字符串，表示泡泡序列的最终形态。
+
+特别地，如果所有泡泡都爆掉了，输出 $0$。(这是个零)
+
+\Examples
+\begin{example}
+\exmp{
+ooOOoooO
+}{
+oO
+}%
+\end{example}
+
+\Note
+
+泡泡们的合并是从左往右哒。
+
+\end{problem}

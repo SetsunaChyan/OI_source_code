@@ -1,0 +1,36 @@
+\begin{problem}{Salah and QWOP}{standard input}{standard output}{1 second}
+
+有若干个小朋友参加了学校的百米赛跑。但是此次的百米赛跑规则有点不太一样：比赛分为$n$轮，每$1$轮比赛只统计第$1$名的同学姓名，在$n$轮比赛结束之后，谁赢得第一名的次数越多，谁就是最终的冠军。现在已知$n$轮的排名情况，请你统计一下谁是最后的冠军。
+
+\InputFile
+
+第一行输入一个正整数$n(1\le n\le 10^3)$，表示有$n$轮的比赛
+
+接下来输入$n$行的姓名(姓名只包含字母$a-z$以及$A-Z$，且每个姓名不超过$10$个字符），表示每$1$轮的获胜者
+
+\OutputFile
+
+输出获胜者的姓名（如果有多人获胜轮次一样，则按字典序最小的输出）
+
+\Examples
+
+\begin{example}
+\exmp{
+2
+A
+B
+}{
+A
+}%
+\exmp{
+5
+ABA
+A
+B
+ABA
+ABA
+}{
+ABA
+}%
+\end{example}
+\end{problem}

@@ -1,0 +1,41 @@
+\begin{problem}{Haruhi with Haruhi with Haruhi}{standard input}{standard output}{1.5 seconds}{1024 megabytes}
+
+实力，心态，策略，临场甚至运气，缺一不可$ ^{[1]}$。
+
+$Haruhi$ 梦到了自己在报名参加 $ACM-HCPC$ ，她需要挑选好几个队友。但是她惊然地发现所有人都变成了 $haruhi$ ，这些 $haruhi$ 都是五边形战士，也就是说她们拥有着实力、心态、策略、临场、运气这五个维度的能力。为了方便，$Haruhi$ 测定了每一个 $haruhi$ 的能力，对于每一个维度，给出她们在 $n$ 个 $ haruhi$ 中的排名，分别用 $a_i,b_i,c_i,d_i,e_i$ 表示，每个维度的排名都\textbf{不会}有并列。
+
+现在 $Haruhi$ 想要知道对于每一个 $haruhi$ ，有多少个 $haruhi$ 的能力全面碾压了她(即五个能力均比她排名高)。
+
+\InputFile
+
+第一行一个正整数 $n(1 \leq n \leq 30000)$。
+
+接下来 $n$ 行，每行 $5$ 个正整数 $a_i,b_i,c_i,d_i,e_i(1 \leq a_i,b_i,c_i,d_i,e_i \leq n)$，分别表示第 $i$ 个 $haruhi$ 五维能力的排名。
+
+\OutputFile
+
+输出 $n$ 行，第 $i$ 行表示第 $i$ 个 $haruhi$ 被多少人全面碾压。
+
+\Example
+\begin{example}
+\exmp{
+4
+1 2 3 1 1
+2 1 1 2 2
+3 3 2 3 3
+4 4 4 4 4
+}{
+0
+0
+1
+3
+}%
+\end{example}
+
+\Note
+
+如果没有非常自信的低复杂度解法，建议使用$C$/$C$++编写此题。
+
+$[1]$ https://www.zhihu.com/question/324603385/answer/688828615
+
+\end{problem}

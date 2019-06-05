@@ -1,7 +1,7 @@
 @SETLOCAL ENABLEDELAYEDEXPANSION
 @echo off
 
-set pexe=A_std
+set pexe=C_std
 
 for %%i in (*.in) do (
 	echo %%~ni%

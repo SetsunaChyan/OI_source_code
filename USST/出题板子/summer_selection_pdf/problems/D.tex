@@ -1,0 +1,45 @@
+\begin{problem}{Haruhi with "Day of sagittarius"}{standard input}{standard output}{1 second}
+
+$Haruhi$ 舰长发现敌军掌控着 $n$ 个星球，这 $n$ 个星球之间有 $m$ 条\textbf{双向}航道\textbf{(不保证联通，可能有自环和重边)}。
+
+为了切断敌军的补给线，$Haruhi$ 舰长能够在某些星球放置她的战舰。当 $x$ 星球被 $Haruhi$ 放置的军舰占领时，所有通向 $x$ 星球或从 $x$ 星球出发的航道将被封锁而不能再使用。她想要知道被切断航道后，未被占领的星球间组成的联通块有几个。
+
+\textbf{对于她的每次放置，你都要回答一次。}	
+
+\InputFile
+
+第一行两个正整数 $n,m(1 \leq n \leq 2*10^5,1 \leq m \leq 2*10^5)$，表示有 $n$ 个星球(从 $1$ 开始编号)和 $m$ 条航道。
+
+接下来 $m$ 行，每行两个正整数 $u_i,v_i(1 \leq u_i,v_i \leq n)$ ，表示 $u_i$  星球和 $v_i$ 星球之间有一条航道。
+
+然后一行 $k(1 \leq k \leq n)$ ，表示 $Haruhi$ 想要放置 $k$ 艘战舰。
+
+接下来 $k$ 行，每行一个正整数 $x_i(1 \leq x_i \leq n)$ ，表示 $Haruhi$ 想要在 $x_i$ 星球放置战舰。
+
+输入保证所有的 $x_i$ 都互不相同。
+
+\OutputFile
+
+总共 $k$ 行，每行一个正整数，表示星球间的联通块数。
+
+\Example
+\begin{example}
+\exmp{
+4 4
+1 2
+1 3
+3 4
+2 4
+4
+2
+3
+1
+4
+}{
+1
+2
+1
+0
+}%
+\end{example}
+\end{problem}

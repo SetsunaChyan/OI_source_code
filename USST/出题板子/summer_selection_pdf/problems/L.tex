@@ -1,0 +1,50 @@
+\begin{problem}{Haruhi with Literature club}{standard input}{standard output}{1 second}
+
+\sout{Doki Doki Literature Club}
+
+$Haruhi$ 从 $I$ 题的老板那里带回来许多扫地机器人，她准备用它们打扫旧校舍兼社团大楼里文艺部门前的走廊。
+
+文艺部外的走廊可以看做 $1*n$ 的平面网格图，$k$ 台扫地机器人需要打扫这一行 $n$ 格地板，每台机器人初始在第 $a_i$ 格(无重叠)。
+
+每台机器人每单位时间可以执行以下动作中的任意一条:
+\begin{itemize}
+\item 往左移动 $1$ 个格子并打扫那个格子( $n$ 只能到 $n-1$ )
+\item 往右移动 $1$ 个格子并打扫那个格子( $1$ 只能到 $2$ )。
+\item 待在原地不动(原先所在的地砖可以视作已打扫)。
+\end{itemize}
+
+机器人互相之间独立不影响。
+
+最终每台机器人都要回到初始位置，并且所有地砖都被扫到至少一次，$Haruhi$ 想要知道最少需要花费多少时间。
+
+\InputFile
+
+第一行两个正整数 $n,k(2 \leq n \leq 10^9,1 \leq k \leq min(2*10^5,n-1))$。
+
+第二行 $a_1-a_k(1 \leq a_1 \lt a_2 \lt \dots \lt a_n \leq n)$ ，表示第 $i$ 台扫地机器人的初始位置。
+
+\OutputFile
+
+一个整数表示最少花费时间。
+
+\Example
+\begin{example}
+\exmp{
+5 3
+1 3 5
+}{
+2
+}%
+\end{example}
+
+\Note
+
+一种可行方案是:
+
+第一台 $1 \to 2 \to 1$ 。
+
+第二台可以 $3 \to 2 \to 3$ 也可以 $3 \to 4 \to 3$ ，或单纯待在原地。
+
+第三台 $5 \to 4 \to 5$ 。
+
+\end{problem}

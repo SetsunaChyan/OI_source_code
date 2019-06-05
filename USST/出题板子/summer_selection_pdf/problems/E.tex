@@ -1,0 +1,38 @@
+\begin{problem}{Haruhi with Equilibrium game}{standard input}{standard output}{1 second}
+
+$Haruhi$ 迷上了新的游戏，她想和你比一比。
+
+$n$ 堆石子围成一个圈，玩 $n$ 轮游戏，每轮独立。第 $i$ 轮从第 $i$ 堆开始。
+
+游戏规则是: 从起始堆开始，两人轮流取石子，每次可以拿任意多个，最少拿 $1$ 个，最多只能把当前堆取完，当前堆拿完之后才能进行下一堆，直到全部 $n$ 堆取完，谁不能取谁就输啦。
+
+当然你必须要让 $Haruhi$ 赢，不然我们可能要在下一个世界才能看到你啦。为此你必须判断某轮中先手是否有必胜策略。
+
+\textbf{注意当你选定先手或后手后，你和 $Haruhi$ 只能按照各自的最优策略取石子，不然 $Haruhi$ 会认为你在让她。}
+
+\InputFile
+
+第一行 $n(1 \leq n \leq 10^5)$。
+
+第二行 $n$ 个整数 $a_i(1 \leq a_i \leq 10^9)$，表示第 $i$ 堆石头的数量。
+
+\OutputFile
+
+输出 $n$ 行，第 $i$ 行表示第 $i$ 轮游戏先手是否有必胜策略。
+
+如果先手有必胜策略，输出"Haruhi go first."(不含双引号)，
+
+反之输出"Haruhi go secondary."(不含双引号)。
+
+\Example
+\begin{example}
+\exmp{
+3
+2 1 3
+}{
+Haruhi go first.
+Haruhi go secondary.
+Haruhi go first.
+}%
+\end{example}
+\end{problem}

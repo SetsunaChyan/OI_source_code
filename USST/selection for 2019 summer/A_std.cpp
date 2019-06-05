@@ -62,6 +62,14 @@ int main()
             team[x].wa[y]++;
     }
     sort(team+1,team+1+n,cmp);
+    //for checking
+    for(int i=2;i<=n;i++)
+        if(team[i].sol==team[i-1].sol&&team[i].p==team[i-1].p&&team[i].last==team[i-1].last)
+        {
+            printf("QAQ");
+            return 0;
+        }
+    //end
     for(int i=1;i<=n;i++)
         printf("%s %d %d\n",team[i].s,team[i].sol,team[i].p);
     return 0;
