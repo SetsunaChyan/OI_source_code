@@ -10,7 +10,7 @@ struct edge
 }e[N<<1];
 
 int _find(int x){return x==fa[x]?x:fa[x]=_find(fa[x]);}
-int _union(int x,int y){fa[_find(x)]=fa[_find(y)];}
+void _union(int x,int y){fa[_find(x)]=fa[_find(y)];}
 
 inline void add_edge(int x,int y)
 {

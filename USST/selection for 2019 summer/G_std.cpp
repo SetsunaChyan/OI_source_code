@@ -28,8 +28,8 @@ void solve()
 	double p=(l+r+R)/2.0;
 	double scross=-2*sqrt(p*(p-r)*(p-R)*(p-l));
 	double h=-scross/l;
-	scross+=asin(h/r)*r*r;
-	scross+=asin(h/R)*R*R;
+	scross+=acos((l*l+r*r-R*R)/(2.0*r*l))*r*r;
+	scross+=acos((l*l+R*R-r*r)/(2.0*R*l))*R*R;
 	printf("%.4lf\n",scross/s);
 }
  

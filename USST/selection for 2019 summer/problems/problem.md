@@ -395,7 +395,7 @@ $Haruhi$ 梦到了自己在报名参加 $ACM-HCPC$ ，她需要挑选好几个�
 
 #### INPUT
 
-第一行一个正整数 $n(1 \leq n \leq 30000)$ 暂定。
+第一行一个正整数 $n(1 \leq n \leq 30000)$。
 
 接下来 $n$ 行，每行 $5$ 个正整数 $a_i,b_i,c_i,d_i,e_i(1 \leq a_i,b_i,c_i,d_i,e_i \leq n)$，分别表示第 $i$ 个 $haruhi$ 五维能力的排名。
 
@@ -427,6 +427,8 @@ $Haruhi$ 梦到了自己在报名参加 $ACM-HCPC$ ，她需要挑选好几个�
 
 
 #### HINT
+
+如果没有非常自信的低复杂度解法，建议使用C/C++编写此题。
 
 $[1]$ https://www.zhihu.com/question/324603385/answer/688828615
 

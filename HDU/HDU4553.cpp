@@ -2,12 +2,12 @@
 using namespace std;
 
 const int MAXN=100005;
-int pre1[MAXN<<2],suf2[MAXN<<2],pre2[MAXN<<2],suf1[MAXN<<2],con1[MAXN<<2],con2[MAXN<<2],lazy1[MAXN<<2],lazy2[MAXN<<2];
+int m,n,pre1[MAXN<<2],suf2[MAXN<<2],pre2[MAXN<<2],suf1[MAXN<<2],con1[MAXN<<2],con2[MAXN<<2],lazy1[MAXN<<2],lazy2[MAXN<<2];
 char s[10];
 
 inline void pushdown(int rt)
 {
-
+    f
 }
 
 inline void pushup(int rt)
