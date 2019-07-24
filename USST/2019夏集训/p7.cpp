@@ -38,7 +38,7 @@ ll query(int rt,int l,int r,int L,int R)
 {
     if(L<=l&&r<=R) return seg[rt];
     int m=l+r>>1;
-    ll ret=0;
+    ll ret=0xc0c0c0c0c0c0c0c0LL;
     if(L<=m) ret=max(ret,query(rt<<1,l,m,L,R));
     if(m<R) ret=max(ret,query(rt<<1|1,m+1,r,L,R));
     return ret;
@@ -53,7 +53,7 @@ int main()
         char op;ll n;
         scanf(" %c%lld",&op,&n);
         if(op=='A')
-            modify(1,1,m,++l,(t+n)%d);
+            modify(1,1,m,++l,(t+n+d)%d);
         else
             printf("%lld\n",t=query(1,1,m,l-n+1,l));
     }

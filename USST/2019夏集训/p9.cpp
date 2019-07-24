@@ -71,21 +71,16 @@ node query(int L,int R,int l,int r,int rt)
 
 int main()
 {
-	int t=0;
-	while(~scanf("%d%d",&n,&q))
-	{
-		t++;
-		for(int i=1;i<=n;i++)
-			scanf("%lld",&a[i]);
-		build(1,n,1);
-		printf("Case %d:\n",t);
-		for(int i=0;i<q;i++)
-		{
-			int x,y;
-			scanf("%d%d",&x,&y);
-			node temp=query(x,y,1,n,1);
-			printf("%d %d\n",temp.max_sub_x,temp.max_sub_y);
-		}
-	}
+	scanf("%d%d",&n,&q);
+    for(int i=1;i<=n;i++)
+        scanf("%lld",&a[i]);
+    build(1,n,1);
+    for(int i=0;i<q;i++)
+    {
+        int x,y;
+        scanf("%d%d",&x,&y);
+        node temp=query(x,y,1,n,1);
+        printf("%d %d\n",temp.max_sub_x,temp.max_sub_y);
+    }
 	return 0;
 }

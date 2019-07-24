@@ -22,6 +22,11 @@ void solve()
         scanf("%d",&a[i]);
         sum+=a[i];
     }
+    if(sum==a[0])
+    {
+        printf("0\n");
+        return;
+    }
     for(int i=0;i<=sum;i++)
         for(int j=0;j<9;j++)
             dp[i][j]=0xc0c0c0c0;

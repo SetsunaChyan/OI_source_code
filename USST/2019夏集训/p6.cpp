@@ -2,13 +2,13 @@
 using namespace std;
 typedef long long ll;
 
-int n,m,tot,rk[6005],fa[6005];
+int n,m,tot,rk[100005],fa[100005];
 ll ans;
 struct edge
 {
     int x,y;
     ll val;
-}e[6005<<1];
+}e[100005];
 
 int _find(int x)
 {
@@ -40,7 +40,7 @@ void solve()
     for(int i=0;i<n-1;i++)
     {
         int x=_find(e[i].x),y=_find(e[i].y);
-        ans+=(rk[x]*rk[y]-1)*(e[i].val+1);
+        ans+=((ll)rk[x]*rk[y]-1)*(e[i].val+1);
         _un(x,y);
     }
     printf("%lld\n",ans);
@@ -48,8 +48,6 @@ void solve()
 
 int main()
 {
-    int _;
-    scanf("%d",&_);
-    while(_--) solve();
+    solve();
     return 0;
 }
