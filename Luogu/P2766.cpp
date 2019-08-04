@@ -95,7 +95,7 @@ int main()
     }
     for(int i=2;i<=n;i++)
         for(int j=1;j<i;j++)
-            if(dp[i]==dp[j]+1)
+            if(dp[i]==dp[j]+1&&a[i]>=a[j])
                 add_edge(j+n,i,1);
     printf("%d\n",dinic());
     for(int i=s;i<=t;i++) e[i].clear();
@@ -107,7 +107,7 @@ int main()
     }
     for(int i=2;i<=n;i++)
         for(int j=1;j<i;j++)
-            if(dp[i]==dp[j]+1)
+            if(dp[i]==dp[j]+1&&a[i]>=a[j])
                 add_edge(j+n,i,1);
     printf("%d",dinic());
     return 0;
