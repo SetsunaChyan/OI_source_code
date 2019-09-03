@@ -1,12 +1,8 @@
-#include <cstdio>
-#include <memory>
-#include <queue>
-#include <cstring>
-
+#include <bits/stdc++.h>
 using namespace std;
-
 typedef long long ll;
-const ll mod=100000;
+
+const ll mod=998244353;
 ll e[110][110],ans=0,n,m;
 int hd=1,sz=1,fail[110],nxt[110][4],cnt[110];
 char s[15];
@@ -58,7 +54,7 @@ void multi(ll x[110][110],ll y[110][110],int n)
     for(int i=0;i<n;i++)
         for(int j=0;j<n;j++)
             for(int k=0;k<n;k++)
-                tmp[i][j]=(tmp[i][j]+x[i][k]*y[k][j])%mod;
+                tmp[i][j]=(tmp[i][j]+x[i][k]*y[k][j]%mod)%mod;
     for(int i=0;i<n;i++)
         for(int j=0;j<n;j++)
             x[i][j]=tmp[i][j];
@@ -83,9 +79,6 @@ void fp(ll x[110][110],ll y,int n)
 
 int main()
 {
-    memset(e,0,sizeof(e));
-    memset(fail,0,sizeof(fail));
-    memset(nxt,0,sizeof(nxt));
     scanf("%lld%lld",&n,&m);
     for(int i=0;i<n;i++)
     {
@@ -98,8 +91,7 @@ int main()
         int p=i+1;
         if(cnt[p]) continue;
         for(int k=0;k<4;k++)
-            if(!cnt[nxt[p][k]]) //!nxt[p][k]
-                e[i][nxt[p][k]-1]++;
+            if(!cnt[nxt[p][k]]) e[i][nxt[p][k]-1]++;
     }
     fp(e,m,sz);
     for(int i=0;i<sz;i++)
