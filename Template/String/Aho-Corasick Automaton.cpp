@@ -1,9 +1,4 @@
-#include <cstdio>
-#include <memory.h>
-#include <malloc.h>
-#include <cstring>
-#include <queue>
-
+#include <bits/stdc++.h>
 using namespace std;
 
 /*

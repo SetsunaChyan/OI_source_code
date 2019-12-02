@@ -22,7 +22,7 @@ inline void add_edge(int x,int y,int f,int cost)
 int dij()
 {
     fill(dis,dis+t+1,inf);
-    priority_queue<pii,vector<pii>,greater<pii> > q;
+    priority_queue<pii,vector<pii>,greater<pii>> q;
     q.emplace(0,s);dis[s]=0;
     while(!q.empty())
     {

@@ -26,7 +26,7 @@ void gen(int upper)
         {
             x=rnd(0,n-1);
             if(_find(x)==_find(i)) continue;
-            fa[i]=x;
+            fa[_find(i)]=x;
             break;
         }
         printf("%d\n",x);

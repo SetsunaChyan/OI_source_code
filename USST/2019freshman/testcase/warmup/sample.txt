@@ -1,0 +1,39 @@
+3
+BEGIN-OF-FILE
+int main()
+{
+    int n=100;
+    for(int i=0;i<n;i=i+1)
+        n=n-1;
+    return 0;
+}
+END-OF-FILE
+BEGIN-OF-FILE
+void fun(){fun();}
+int main()
+{
+    fun();
+    return 0;
+}
+END-OF-FILE
+BEGIN-OF-FILE
+void fun3()
+{
+    int a=5;
+    while(a<10) a=a+1;
+}
+void fun2(){fun3();}
+void fun1(){fun2();}
+int main()
+{
+    fun1();
+    return 0;
+}
+END-OF-FILE
+
+1
+0 1 0
+
+NO INPUT
+2
+5 4 3 2 1(并不一定正确)
